@@ -11,7 +11,7 @@
 
 ## 如何开始
 
-1. 直接访问：[游戏链接](https://Little09qwq.github.io/oi-remake)
+1. 直接访问：[游戏链接](https://Little09qwq.github.io/oi-remake-game)
 2. 选择游戏模式：
    - NOIP 测试模式：快速体验游戏核心玩法
    - 正常模式：完整体验 OI 生涯
