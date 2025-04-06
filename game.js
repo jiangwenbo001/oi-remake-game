@@ -2812,6 +2812,7 @@ let purchasedItems = new Set();
 function calculateAward(contestType, score, prevScore = 0, prevScore2 = 0, prevScore3 = 0) {
   // 根据难度调整分数线
   const difficultyMultiplier = {
+    'simple': 0.6,    
     'easy': 0.8,    // 简单难度分数线降低20%
     'normal': 0.9,    // 普通难度保持不变
     'hard': 1,    // 困难难度分数线提高20%
@@ -3058,6 +3059,12 @@ function startAdvancedMode(difficulty) {
 
   // 根据难度调整初始属性
   switch (difficulty) {
+    case 'simple':
+      remainingPoints = 100; // 更多天赋点
+      playerStats.determination = 10000; // 更多决心
+      mood = 10; // 最高心态
+      extraMoodDrop = 0; // 额外心态下降值
+      currentShopPrices = getInitialShopPrices('simple');
     case 'easy':
       remainingPoints = 30; // 更多天赋点
       playerStats.determination = 3000; // 更多决心
@@ -3159,6 +3166,16 @@ function startAdvancedMode(difficulty) {
 // 添加获取初始商店价格的函数
 function getInitialShopPrices(difficulty) {
   const basePrices = {
+    simple: {
+      "思维提升": 100,
+      "代码提升": 100,
+      "细心提升": 100,
+      "随机提升": 100,
+      "心态恢复": 150,
+      "全面提升": 400,
+      "速度提升": 500,
+      "心理素质提升": 500
+    },
     easy: {
       "思维提升": 200,
       "代码提升": 200,
